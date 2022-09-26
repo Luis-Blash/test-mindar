@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prueba de ar</title>
     <!-- librerias -->
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
-    <link rel="stylesheet" href="index.css">
-</head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<body>
+  <body>
     <h1>Test 0.0.17</h1>
     <!-- ui -->
     <div id="error">
-        <div class="loading_border blue"></div>
+      <div class="loading_border blue"></div>
     </div>
     <div id="loading">
-        <div class="loading_border red"></div>
+      <div class="loading_border red"></div>
     </div>
     <div id="scanning" class="hidden">
-        <div class="inner">
-            <img src="./images/souma.jpg" style="opacity: 0.5;">
-            <div class="scanline"></div>
-        </div>
+      <div class="inner">
+        <img
+          src="https://cdn.glitch.global/1ef15c25-bf21-42ee-bf73-149fe04140d8/souma.jpg?v=1664213212687"
+          style="opacity: 0.5"
+        />
+        <div class="scanline"></div>
+      </div>
     </div>
     <!-- ar -->
     <a-scene
-        mindar-image="filterMinCF: 0.001; filterBeta: 1000; uiError: #error; uiLoading: #loading; uiScanning: #scanning; imageTargetSrc: ./multi.mind;"
-        vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-        <a-assets>
-            <a-asset-item id="dhl" src="./models/client.glb"></a-asset-item>
-        </a-assets>
+      mindar-image="filterMinCF: 0.001; filterBeta: 1000; uiError: #error; uiLoading: #loading; uiScanning: #scanning; imageTargetSrc: https://cdn.glitch.global/1ef15c25-bf21-42ee-bf73-149fe04140d8/multi.mind?v=1664213277755;"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-assets>
+        <a-asset-item id="dhl" src="https://cdn.glitch.global/1ef15c25-bf21-42ee-bf73-149fe04140d8/client.glb?v=1664213269601"></a-asset-item>
+      </a-assets>
 
-        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-        <a-entity mindar-image-target="targetIndex: 0">
-            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0.1" scale="0.8 0.8 0.8" src="#dhl">
-        </a-entity>
-        <a-entity mindar-image-target="targetIndex: 1">
-            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0.1" scale="0.8 0.8 0.8" src="#dhl">
-        </a-entity>
-        <a-entity mindar-image-target="targetIndex: 2">
-            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0.1" scale="0.8 0.8 0.8" src="#dhl">
-        </a-entity>
-        <a-entity mindar-image-target="targetIndex: 3">
-            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0.1" scale="0.8 0.8 0.8" src="#dhl">
-        </a-entity>
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model
+          rotation="0 0 0 "
+          position="0 -0.25 0.1"
+          scale="0.8 0.8 0.8"
+          src="#dhl"
+        />
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model
+          rotation="0 0 0 "
+          position="0 -0.25 0.1"
+          scale="0.8 0.8 0.8"
+          src="#dhl"
+        />
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-gltf-model
+          rotation="0 0 0 "
+          position="0 -0.25 0.1"
+          scale="0.8 0.8 0.8"
+          src="#dhl"
+        />
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-gltf-model
+          rotation="0 0 0 "
+          position="0 -0.25 0.1"
+          scale="0.8 0.8 0.8"
+          src="#dhl"
+        />
+      </a-entity>
     </a-scene>
     <script src="./index.js"></script>
-</body>
-
+  </body>
 </html>

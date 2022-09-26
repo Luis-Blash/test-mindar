@@ -1,0 +1,68 @@
+<html class="a-fullscreen">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
+    <meta aframe-injected="" name="theme-color" content="black">
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
+    <link rel="stylesheet" href="qr.css">
+</head>
+
+<body cz-shortcut-listen="true">
+    <a-scene
+        mindar-image="imageTargetSrc: https://cdn.glitch.global/1ef15c25-bf21-42ee-bf73-149fe04140d8/qrbolita.mind;"
+        color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false" inspector="" keyboard-shortcuts="" screenshot="">
+        <a-assets>
+
+            <a-asset-item id="avatarModel"
+                src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf">
+            </a-asset-item>
+            <img id="card"
+                src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.png"
+                crossorigin="anonymous">
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false" camera="" rotation="" wasd-controls=""></a-camera>
+
+        <a-entity mindar-image-target="targetIndex: 0">
+            <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0" material="" geometry="">
+            </a-plane>
+            <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
+                animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+                gltf-model="">
+            </a-gltf-model>
+        </a-entity>
+        <canvas class="a-canvas" data-aframe-canvas="true" width="1310" height="913"></canvas>
+        <div class="a-loader-title" style="display: none;"></div>
+        <a-entity light="" data-aframe-default-light="" aframe-injected=""></a-entity>
+        <a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity>
+    </a-scene>
+
+
+    <div class="mindar-ui-overlay mindar-ui-loading hidden">
+        <div class="loader"> </div>
+    </div>
+    <div class="mindar-ui-overlay mindar-ui-compatibility hidden">
+        <div class="content">
+            <h1>Failed to launch :(</h1>
+            <p> Looks like your device/browser is not compatible. </p> <br> <br>
+            <p> Please try the following recommended browsers: </p>
+            <p> For Android device - Chrome </p>
+            <p> For iOS device - Safari </p>
+        </div>
+    </div>
+    <div class="mindar-ui-overlay mindar-ui-scanning">
+        <div class="scanning">
+            <div class="inner">
+                <div class="scanline"> </div>
+            </div>
+        </div>
+    </div><video autoplay="" muted="" playsinline=""
+        style="position: absolute; top: -27.5px; left: 0px; z-index: -2; width: 1048px; height: 786px;" width="640"
+        height="480"></video>
+</body>
+
+</html>
