@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <h1>Test 0.0.10</h1>
+    <h1>Test 0.0.11</h1>
     <!-- ui -->
     <div id="error">
         <div class="loading_border blue"></div>
@@ -30,7 +30,7 @@
     </div>
     <!-- ar -->
     <a-scene
-        mindar-image="filterMinCF:0.001; filterBeta: 1000; uiError: #error; uiLoading: #loading; uiScanning: #scanning; imageTargetSrc: ./multi.mind;"
+        mindar-image="filterMinCF:0.01; filterBeta: 10; uiError: #error; uiLoading: #loading; uiScanning: #scanning; imageTargetSrc: ./multi.mind;"
         vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
             <a-asset-item id="dhl" src="./models/client.glb"></a-asset-item>
